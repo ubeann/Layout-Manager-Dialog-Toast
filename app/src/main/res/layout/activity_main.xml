@@ -7,20 +7,25 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleLayoutManager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:selectionRequired="true"
+        app:singleSelection="true"
+        app:checkedButton="@+id/layoutLinear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <Button
+            android:id="@+id/layoutLinear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/linear"
             app:icon="@drawable/ic_baseline_list_24"
             style="@style/Widget.App.Button.OutlinedButton.IconOnly"/>
         <Button
+            android:id="@+id/layoutGrid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/grid"
@@ -28,4 +33,13 @@
             style="@style/Widget.App.Button.OutlinedButton.IconOnly"/>
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/containerSubject"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toggleLayoutManager"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

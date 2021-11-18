@@ -2,4 +2,49 @@
     <string name="app_name">Layout-Manager-Dialog-Toast</string>
     <string name="grid">Grid</string>
     <string name="linear">linear</string>
+    <string name="ilustrasi_matakuliah">Ilustrasi Mata Kuliah</string>
+    <string name="title">Nama Mata Kuliah</string>
+    <string name="supporting_text">Deskripsi Mata Kuliah</string>
+
+    <!-- Image of Subject -->
+    <integer-array name="image">
+        <item>@drawable/english</item>
+        <item>@drawable/professional_ethics</item>
+        <item>@drawable/science_philosophy</item>
+        <item>@drawable/data_analysis_and_visualization</item>
+        <item>@drawable/mobile_programming</item>
+        <item>@drawable/enterprise_architectural_planning</item>
+        <item>@drawable/e_health_interaction_system_planning</item>
+        <item>@drawable/enterprise_application_development</item>
+        <item>@drawable/information_system_security</item>
+        <item>@drawable/project_management</item>
+    </integer-array>
+
+    <!-- Name of Subject -->
+    <string-array name="name">
+        <item>Bahasa Inggris II</item>
+        <item>Etika Profesi</item>
+        <item>Filsafat Ilmu</item>
+        <item>Analisis dan Visualisasi Data</item>
+        <item>Pemrograman Mobile</item>
+        <item>Perencanaan Arsitektur Perusahaan</item>
+        <item>Perencanaan Sistem Interaksi E-Health</item>
+        <item>Pembangunan Aplikasi Enterprise</item>
+        <item>Keamanan Sistem Informasi</item>
+        <item>Manajemen Proyek</item>
+    </string-array>
+
+    <!-- Description of Subject -->
+    <string-array name="description">
+        <item>Mata kuliah ini mengajarkan tentang cara menginterpretasi teks (reading comprehension), berkomunikasi secara lisan (speaking) dan tulisan (writing dan grammar) dalam bahasa Inggris sesuai dengan kaidah yang berlaku.</item>
+        <item>Setelah mengikuti mata kuliah Etika Profesi, mahasiswa diharapkan dapat menerapkan konsep-konsep Etika Profesi dalam pengembangan dan operasionalisasi Sistem Informasi.</item>
+        <item>Mempelajari filsafat ilmu dapat memberikan pendasaran logis bagi mahasiswa dalam menelaah ilmu secara umum, baik berupa prinsip-prinsip ilmiah serta bagaimana dialektika keilmuan itu bisa tercipta.</item>
+        <item>Mata kuliah ini bermanfaat untuk mendukung kemampuan analisis data dan visualisasi data. Mata kuliah disampaikan secara tatap muka, membahas tentang pengantar visualisasi data, eksplorasi data, eksplorasi grafis data bisnis.</item>
+        <item>Mata ajaran ini mempelajari tentang Konsep Pemrograman Mobile; Konsep Mobile Operating System; Layout Manager; Dialog; Pembuatan Menu; Penyimpanan Data; Dasar Akses Hardware; Pemrograman Location Based Service</item>
+        <item>Mahasiswa mampu menggunakan kerangka kerja arsitektur enterprise untuk perencanaan sistem informasi strategis yang selaras dengan strategi bisnis organisasi.</item>
+        <item>Mahasiswa mampu menerapkan prinsip desain interaksi yang tepat untuk sistem E-Health. Diantaranya seperti Sistem interaksi; Konsep data, informasi, dan pengetahuan kesehatan;</item>
+        <item>Analisis dan desain kebutuhan aplikasi untuk enterprise; Pemilihan dan Penerapan teknologi untuk kebutuhan enterprise; Pembangunan aplikasi untuk enterprise; Evaluasi aplikasi untuk enterprise.</item>
+        <item>Keamanan Sistem Informasi adalah bagaimana sih kita dapat mencegah terjadinya suatu penipuan, paling tidak mendeteksi adanya penipuan dalam sebuah sistem yang berbasis informasi yang dimana informasi itu sendiri tidak mempunyai arti fisik.</item>
+        <item>Manajemen proyek adalah sebuah disiplin keilmuan dalam hal perencanaan, pengorganisasian, pengelolaan, untuk dapat mencapai tujuan-tujuan proyek.</item>
+    </string-array>
 </resources>
