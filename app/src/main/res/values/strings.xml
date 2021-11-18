@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Layout-Manager-Dialog-Toast</string>
+    <string name="grid">Grid</string>
+    <string name="linear">linear</string>
+</resources>
