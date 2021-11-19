@@ -5,6 +5,9 @@
     <string name="ilustrasi_matakuliah">Ilustrasi Mata Kuliah</string>
     <string name="title">Nama Mata Kuliah</string>
     <string name="supporting_text">Deskripsi Mata Kuliah</string>
+    <string name="cancel">BATAL</string>
+    <string name="ok">REVIEW</string>
+    <string name="text_toast">TEXT TOAST</string>
 
     <!-- Image of Subject -->
     <integer-array name="image">

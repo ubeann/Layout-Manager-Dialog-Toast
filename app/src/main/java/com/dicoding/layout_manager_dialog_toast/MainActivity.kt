@@ -1,17 +1,29 @@
 package com.dicoding.layout_manager_dialog_toast
 
+import android.app.Activity
 import android.os.Bundle
 import android.content.res.Configuration
+import android.view.Gravity
+import android.view.View
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.button.MaterialButtonToggleGroup
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
     // Variable Setup
     private val title:String = "Review Mata Kuliah"
     private val list = ArrayList<Subject>()
+    private val itemsDialog = arrayOf("Sangat Buruk", "Kurang", "Cukup", "Baik", "Sangat Baik")
+    private val checkedItemDialog = 3
+    private var selectedItemDialog:Int = 3
+    private lateinit var customToast:Toast
+    private lateinit var customToastLayout:View
+    private lateinit var customToastText:TextView
     private lateinit var containerSubject:RecyclerView
     private lateinit var toggleLayoutManager:MaterialButtonToggleGroup
 
@@ -23,8 +35,13 @@ class MainActivity : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar?.title = title
 
-        // Setup recycle view
+        // Set Variable
         toggleLayoutManager = findViewById(R.id.toggleLayoutManager)
+        customToast = Toast(applicationContext)
+        customToastLayout = layoutInflater.inflate(R.layout.custom_toast, findViewById(R.id.toast_container))
+        customToastText = customToastLayout.findViewById(R.id.toast_text)
+
+        // Setup recycle view
         containerSubject = findViewById(R.id.containerSubject)
         containerSubject.setHasFixedSize(false)
         list.addAll(listSubject)
@@ -51,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         containerSubject.adapter = subjectAdapter
         subjectAdapter.setOnItemClickCallback(object : SubjectAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Subject) {
-//                showSelectedUser(data)
+                showSelectedDialog(data)
             }
         })
         if (applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -73,10 +90,24 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    private fun showSelectedUser(user: User) {
-//        val intent = Intent(this@MainActivity, DetailActivity::class.java)
-//        intent.putExtra(DetailActivity.EXTRA_USER, user)
-//        startActivity(intent)
-//        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-//    }
+    private fun showSelectedDialog(subject: Subject) {
+        MaterialAlertDialogBuilder(this@MainActivity)
+            .setTitle("Review ${if (subject.name.length > 20) subject.name.take(20) + "..." else subject.name}")
+            .setNeutralButton(resources.getString(R.string.cancel)) { _, _ -> }
+            .setPositiveButton(resources.getString(R.string.ok)) { _, _ ->
+                showCustomToast ("Berhasil mereview '${itemsDialog[selectedItemDialog]}' pada ${subject.name}.")
+            }
+            .setSingleChoiceItems(itemsDialog, checkedItemDialog) { _, which ->
+                selectedItemDialog = which
+            }
+            .show()
+    }
+
+    private fun showCustomToast(message: String) {
+        customToastText.text = message
+        customToast.duration = Toast.LENGTH_SHORT
+        customToast.setGravity(Gravity.TOP or Gravity.CENTER_HORIZONTAL,0,168)
+        customToast.view = customToastLayout
+        customToast.show()
+    }
 }
